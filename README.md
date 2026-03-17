@@ -27,4 +27,54 @@
 
 **Overall Test Accuracy: 96.50%** on 572 test images
 
+## Dataset
+
+- **Total images**: 2,845  
+- **Split**: 80% training (2,273 images) + 20% testing (572 images)  
+- **4 Classes**: Closed_Eyes, Open_Eyes, No_Yawn, Yawn (balanced)
+
+**Sources**:
+- Public datasets from Kaggle
+- Self-collected photos and videos from online sources
+- Augmented using OpenCV (frame extraction) + Stable Diffusion (synthetic images)
+
+Full dataset is too big for GitHub, but you can see sample images inside the `data/sample/` folder.  
+More details → [data/README.md](data/README.md)
+
 ## 🏗️ System Architecture
+
+The system follows a hybrid approach combining deep learning classification with traditional computer vision metrics for reliable real-time drowsiness detection.
+
+### Main Components & Flow:
+1. **Video Input**  
+   Webcam captures live video frames.
+
+2. **Face Detection & Landmarks**  
+   Uses MediaPipe Face Mesh to detect face and extract 468 facial landmarks.
+
+3. **Feature Extraction**  
+   - Eye Aspect Ratio (EAR): Measures if eyes are closed (low EAR = drowsy).  
+   - Mouth Aspect Ratio (MAR): Detects yawning (high MAR = yawn).  
+   - These act as fast, rule-based triggers.
+
+4. **Deep Learning Classification**  
+   MobileNetV2 model classifies cropped eye/mouth regions into:  
+   - Closed_Eyes / Open_Eyes  
+   - Yawn / No_Yawn  
+   (Trained on augmented dataset → 96.5% accuracy)
+
+5. **Decision Fusion**  
+   Combines:  
+   - EAR/MAR thresholds (quick detection)  
+   + CNN predictions (more accurate but slower)  
+   → Computes a "Fatigue Score". If score > threshold → trigger alarm + warning.
+
+6. **Output / UI**  
+   - Real-time overlay on video  
+   - Live graphs (EAR/MAR over time)  
+   - Audio/visual alerts (beep + red screen)
+
+### Future Diagram
+(Architecture diagram coming soon — will show data flow from input to alert)
+
+This hybrid design makes the system lightweight (MobileNetV2 runs on mobile/edge), accurate, and reduces false alarms.
