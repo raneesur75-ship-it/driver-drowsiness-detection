@@ -27,54 +27,52 @@
 
 **Overall Test Accuracy: 96.50%** on 572 test images
 
-## Dataset
+## 📚 Dataset
 
 - **Total images**: 2,845  
-- **Split**: 80% training (2,273 images) + 20% testing (572 images)  
+- **Split**: 80% training + 20% testing (572 test images)  
 - **4 Classes**: Closed_Eyes, Open_Eyes, No_Yawn, Yawn (balanced)
 
 **Sources**:
-- Public datasets from Kaggle
-- Self-collected photos and videos from online sources
-- Augmented using OpenCV (frame extraction) + Stable Diffusion (synthetic images)
+- Public Kaggle datasets  
+- Self-collected photos/videos from online sources  
+- Augmented with OpenCV + Stable Diffusion (synthetic images)
 
-Full dataset is too big for GitHub, but you can see sample images inside the `data/sample/` folder.  
-More details → [data/README.md](data/README.md)
+Full dataset is large, so not on GitHub. Sample images are in `data/sample/`.  
+See details → [data/README.md](data/README.md)
+
+## 💻 Installation & How to Run
+
+### 1. Clone
+```bash
+git clone https://github.com/raneesur75-ship-it/driver-drowsiness-detection-using-deep-learning.git
+cd driver-drowsiness-detection-using-deep-learning
+
+2. Install packages
+pip install -r requirements.txt
+
+3. Run the real-time demo
+python src/main.py
+
+Important: If your file is not named main.py, change it to the correct name.
+(Example: if your file is drowsiness_app.py then write python src/drowsiness_app.py)You will see the webcam open with live detection + alarm!
+
+
 
 ## 🏗️ System Architecture
+.
 
-The system follows a hybrid approach combining deep learning classification with traditional computer vision metrics for reliable real-time drowsiness detection.
+```markdown
+The system uses a **hybrid approach** (fast rule-based + deep learning) for reliable real-time drowsiness detection.
 
-### Main Components & Flow:
-1. **Video Input**  
-   Webcam captures live video frames.
+### Flow:
+1. **Webcam Input** → Live video frames  
+2. **MediaPipe Face Mesh** → 468 facial landmarks  
+3. **EAR + MAR Calculation** → Quick eye/yawn detection  
+4. **MobileNetV2 CNN** → Classifies eyes & mouth (96.5% accurate)  
+5. **Decision Fusion** → Combines everything into Fatigue Score  
+6. **Alert System** → Alarm + UI graphs if drowsy  
 
-2. **Face Detection & Landmarks**  
-   Uses MediaPipe Face Mesh to detect face and extract 468 facial landmarks.
+**Why it works**: Lightweight (runs on laptop/mobile), low false alarms, and very accurate.
 
-3. **Feature Extraction**  
-   - Eye Aspect Ratio (EAR): Measures if eyes are closed (low EAR = drowsy).  
-   - Mouth Aspect Ratio (MAR): Detects yawning (high MAR = yawn).  
-   - These act as fast, rule-based triggers.
-
-4. **Deep Learning Classification**  
-   MobileNetV2 model classifies cropped eye/mouth regions into:  
-   - Closed_Eyes / Open_Eyes  
-   - Yawn / No_Yawn  
-   (Trained on augmented dataset → 96.5% accuracy)
-
-5. **Decision Fusion**  
-   Combines:  
-   - EAR/MAR thresholds (quick detection)  
-   + CNN predictions (more accurate but slower)  
-   → Computes a "Fatigue Score". If score > threshold → trigger alarm + warning.
-
-6. **Output / UI**  
-   - Real-time overlay on video  
-   - Live graphs (EAR/MAR over time)  
-   - Audio/visual alerts (beep + red screen)
-
-### Future Diagram
-(Architecture diagram coming soon — will show data flow from input to alert)
-
-This hybrid design makes the system lightweight (MobileNetV2 runs on mobile/edge), accurate, and reduces false alarms.
+(Architecture diagram coming soon — will add screenshot here!)
