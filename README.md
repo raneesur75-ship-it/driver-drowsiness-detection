@@ -62,7 +62,8 @@ python src/realtime_detector.py
 ```
 
 
-## Note: This is the correct file name (realtime_detector.py).
+## Note: 
+This is the correct file name (realtime_detector.py).
 Your webcam will open instantly with live detection, fatigue score, graphs, and alarm sound!
 
 
