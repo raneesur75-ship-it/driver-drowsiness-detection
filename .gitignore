@@ -205,3 +205,34 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Machine Learning - Model files (too large for GitHub)
+*.h5
+*.hdf5
+*.keras
+*.pb
+*.onnx
+*.tflite
+models/*.h5
+models/*.keras
+models/checkpoints/
+
+# Data (don't upload datasets)
+data/raw/
+data/processed/
+data/augmented/
+*.zip
+*.tar.gz
+*.rar
+
+# Results (generated files - keep folder but not contents)
+results/*.png
+results/*.jpg
+results/*.txt
+results/*.csv
+!results/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
