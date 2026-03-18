@@ -13,12 +13,12 @@
 Here’s how the system looks in real-time:
 
 <p align="center">
-  <img src="capture_1773825174.png" alt="Live Detection - Eyes Closed & Alarm" width="45%">
-  <img src="screenshots/graphs.png" alt="Fatigue Score & Live Graphs" width="45%">
+  <img src="screenshots/capture_1773825174.png****" alt="Live Detection - Eyes Closed & Alarm" width="45%">
+  <img src="screenshots/capture_1773825177.png" alt="Fatigue Score & Live Graphs" width="45%">
 </p>
 
 <p align="center">
-  <img src="screenshots/alarm.png" alt="Alarm Triggering" width="60%">
+  <img src="screenshots/capture_1773825185.png" alt="Alarm Triggering" width="60%">
 </p>
 
 ## 🎯 Why This Project Matters
