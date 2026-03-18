@@ -58,22 +58,16 @@ See details → [data/README.md](data/README.md)
 
 ### 1. Clone the repo
 ```
-
 git clone https://github.com/raneesur75-ship-it/driver-drowsiness-detection-using-deep-learning.git
 cd driver-drowsiness-detection-using-deep-learning
-
 ```
 ### 2. Install packages
 ```
-
 pip install -r requirements.txt
-
 ```
 ### 3. Run the real-time demo
 ```
-
 python src/realtime_detector.py
-
 ```
 ###N ote: Your webcam 🎥 will open instantly with live detection, fatigue score, graphs, and alarm sound!
 
@@ -82,7 +76,6 @@ python src/realtime_detector.py
 
 ```
 Webcam → Face Mesh → EAR/MAR → CNN → Fatigue Score → Alarm
-
 ```
 The system uses a hybrid approach (fast rule-based + deep learning) for reliable real-time drowsiness detection.
 
@@ -106,12 +99,12 @@ Real-time processing → practical deployment
 
 ## 🔮 Future Improvements
 
-Night vision (infrared camera)
+✅Night vision (infrared camera)
 
-Mobile app (Android/iOS)
+✅Mobile app (Android/iOS)
 
-Cloud-based monitoring system
+✅Cloud-based monitoring system
 
-Voice-based alerts✅
+✅oice-based alerts✅
 
 
