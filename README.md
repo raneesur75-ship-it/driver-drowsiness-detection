@@ -14,7 +14,6 @@
 ![Fatigue Score & Graphs](screenshots/graphs.png)  
 ![Alarm Triggering](screenshots/alarm.png)
 
-*(Upload 2-3 screenshots/GIFs in the `screenshots/` folder and replace the links above)*
 
 ## 🎯 Why This Project Matters
 
