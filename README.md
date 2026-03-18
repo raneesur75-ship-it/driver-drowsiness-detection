@@ -13,7 +13,7 @@
 Here’s how the system looks in real-time:
 
 <p align="center">
-  <img src="screenshots/capture_1773825174.png****" alt="Live Detection - Eyes Closed & Alarm" width="45%">
+  <img src="screenshots/capture_1773825174.png" alt="Live Detection - Eyes Closed & Alarm" width="45%">
   <img src="screenshots/capture_1773825177.png" alt="Fatigue Score & Live Graphs" width="45%">
 </p>
 
