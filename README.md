@@ -69,7 +69,7 @@ pip install -r requirements.txt
 ```
 python src/realtime_detector.py
 ```
-### Note: Your webcam 🎥 will open instantly with live detection, fatigue score, graphs, and alarm sound!
+### Note: ### Your webcam 🎥 will open instantly with live detection, fatigue score, graphs, and alarm sound!
 
 
 ## 🏗️ System Architecture
