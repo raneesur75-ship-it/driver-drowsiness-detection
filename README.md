@@ -8,9 +8,10 @@
 > Real-time driver drowsiness detection using CNN (MobileNetV2) and Computer Vision.  
 > **96.5% accuracy** | **4-class classification** | **Real-time alarm system**
 
-## 📸 Demo GIF
-
-![Demo](driver-drowsiness-detection-demo.gif)
+## 📸 Demo
+<p align="center">
+  <img src="driver-drowsiness-detection-demo.gif" alt="Demo: Real-time drowsiness detection" width="700"/>
+</p>
 
 ## 📸 Demo Screenshots
 
